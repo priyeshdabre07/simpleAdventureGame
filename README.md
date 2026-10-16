@@ -5,8 +5,10 @@ woods, find useful items, and decide what becomes of the moon bell.
 
 ## Play
 
-Open `index.html` in a modern web browser. No build step, package installation,
-or server is required.
+Play online: [simpleadventuregame.vercel.app](https://simpleadventuregame.vercel.app)
+
+To run it locally, open `index.html` in a modern web browser. No build step,
+package installation, or server is required.
 
 ## How to play
 
