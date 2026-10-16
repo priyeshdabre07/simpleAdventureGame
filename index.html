@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101a17">
+    <meta name="description" content="Find your way through a forgotten forest in this little choose-your-own-adventure.">
+    <title>Mosslight — A Little Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Mosslight home">
+        <span class="wordmark-mark" aria-hidden="true">✳</span>
+        <span>MOSSLIGHT</span>
+      </a>
+      <span class="topbar-note"><span class="status-dot" aria-hidden="true"></span> A little story for a quiet moment</span>
+      <button class="restart-link" id="restart-top" type="button">Start over <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro-row" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> A CHOOSE-YOUR-OWN ADVENTURE</p>
+          <h1 id="page-title">The lantern in<br><em>the lost woods.</em></h1>
+        </div>
+        <p class="intro-copy">The old forest is full of little wonders.<br>It is also very, very good at keeping secrets.</p>
+      </section>
+
+      <div class="game-layout">
+        <aside class="sidebar" aria-label="Adventure details">
+          <section class="side-card objective-card">
+            <p class="card-label">YOUR LITTLE QUEST</p>
+            <div class="quest-icon" aria-hidden="true">☾</div>
+            <h2>Find the moon bell</h2>
+            <p>Somewhere beyond the trees, an old bell is waiting to be heard again.</p>
+            <div class="quest-rule"></div>
+            <p class="small-note"><span aria-hidden="true">✦</span> There is no wrong way through the woods.</p>
+          </section>
+
+          <section class="side-card status-card" aria-label="Your status">
+            <div class="status-heading">
+              <p class="card-label">YOUR JOURNEY</p>
+              <span id="step-count">DAY 01</span>
+            </div>
+            <div class="status-row">
+              <span>WARMTH</span>
+              <span class="hearts" id="health-display" aria-label="Three warmth points">♥ ♥ ♥</span>
+            </div>
+            <div class="status-row inventory-heading"><span>IN YOUR POCKET</span></div>
+            <ul class="inventory-list" id="inventory-list">
+              <li class="empty-inventory">Just the usual things.</li>
+            </ul>
+          </section>
+
+          <p class="sidebar-footnote"><span aria-hidden="true">✳</span> Take your time. The woods aren't going anywhere.</p>
+        </aside>
+
+        <section class="story-card" aria-label="Your adventure">
+          <div class="scene-art" id="scene-art" role="img" aria-label="A moonlit forest clearing">
+            <span class="art-moon" aria-hidden="true"></span>
+            <span class="art-star star-one" aria-hidden="true">✦</span>
+            <span class="art-star star-two" aria-hidden="true">✧</span>
+            <span class="art-star star-three" aria-hidden="true">·</span>
+            <span class="art-hill hill-back" aria-hidden="true"></span>
+            <span class="art-hill hill-front" aria-hidden="true"></span>
+            <span class="art-tree tree-left" aria-hidden="true"></span>
+            <span class="art-tree tree-right" aria-hidden="true"></span>
+            <span class="art-firefly firefly-one" aria-hidden="true"></span>
+            <span class="art-firefly firefly-two" aria-hidden="true"></span>
+            <span class="art-caption" id="art-caption">A clearing, somewhere between here and home</span>
+          </div>
+          <div class="story-content">
+            <div class="chapter-row">
+              <span class="chapter-label"><span class="chapter-mark" aria-hidden="true">✳</span> <span id="chapter-name">THE FOREST'S EDGE</span></span>
+              <span class="chapter-number" id="chapter-number">01 <span>/ 05</span></span>
+            </div>
+            <h2 id="scene-title" tabindex="-1">A light in the brambles</h2>
+            <div class="story-text" id="story-text" aria-live="polite" aria-atomic="true"></div>
+            <div class="choice-area">
+              <p class="choice-prompt" id="choice-prompt">What do you do?</p>
+              <div class="choices" id="choices"></div>
+            </div>
+            <p class="story-footer"><span aria-hidden="true">↳</span> Your choices shape this story.</p>
+          </div>
+        </section>
+      </div>
+      <footer class="page-footer"><span>MADE FOR THE MAGIC OF GETTING A LITTLE LOST</span><span>✦ &nbsp; MOSSLIGHT TALES &nbsp; ✦</span></footer>
+    </main>
+
+    <dialog class="restart-dialog" id="restart-dialog" aria-labelledby="restart-title">
+      <form method="dialog">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ONE MORE TIME?</p>
+        <h2 id="restart-title">Leave these woods behind?</h2>
+        <p>Your story will begin again from the very first clearing.</p>
+        <div class="dialog-actions">
+          <button class="choice-button secondary-choice" value="cancel">Stay a little longer</button>
+          <button class="choice-button" id="confirm-restart" value="restart">Start a new story <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
